@@ -10,12 +10,12 @@
 
 ---
 
-> **MnémIA** – un générateur de modules artistiques conçu pour développer la créativité.  
-> Destiné en premier lieu aux enseignants du milieu scolaire, cet outil inclusif s’adresse à toutes et à tous, quel que soit l’âge, le niveau ou la physicalité.  
+> **MnémIA** est un générateur de modules artistiques conçu pour développer la créativité.  
+> Destiné en premier lieu aux enseignants du milieu scolaire, cet outil inclusif s’adresse à toutes et à tous, quel que soit l’âge, le niveau et la physicalité. Il ambitionne d'accompagner les enseignants dans la conception de projets artistiques en utilisant la donnée comme déclencheur de créativité.
 > Cette première version permet de composer des phrases chorégraphiques à partir d’un processus de création fondé sur les notions de contrainte et d’aléatoire, deux puissants leviers de créativité.  
 > La version 2 visera à étendre cette approche à d’autres champs artistiques.
 >
-> > Projet réalisé pour la certification **RNCP37827 – Développeur·se en Intelligence Artificielle (Bloc E1)**.  
+> Projet réalisé pour la certification **RNCP37827 – Développeur·se en Intelligence Artificielle (Bloc E1)**.  
 > Objectif : illustrer la **chaîne complète de la donnée** – collecte, nettoyage, stockage et exposition via API.
 
 ---
