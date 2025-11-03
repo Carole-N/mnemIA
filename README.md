@@ -228,6 +228,7 @@ Les preuves de bon fonctionnement sont regroupées dans docs/captures_E1/ :
 ## Licence
 
 Ce projet est distribué sous la licence MIT.
+>
 > © 2025 – Carole Novak
 
 ---
@@ -235,8 +236,10 @@ Ce projet est distribué sous la licence MIT.
 ## Autrice
 
 Carole Novak
-Projet réalisé dans le cadre de la certification RNCP 37827 – Bloc E1 “Réaliser la collecte, le stockage et la mise à disposition des données”.
-Dépôt GitHub : https://github.com/Carole-N/mnemIA
+>
+> Projet réalisé dans le cadre de la certification RNCP 37827 – Bloc E1 “Réaliser la collecte, le stockage et la mise à disposition des données”.
+> 
+> Dépôt GitHub : https://github.com/Carole-N/mnemIA
 
 ---
 
