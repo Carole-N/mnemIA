@@ -8,7 +8,7 @@
 ![BeautifulSoup](https://img.shields.io/badge/WebScraping-BeautifulSoup-lightgrey)
 ![License](https://img.shields.io/badge/License-MIT-yellow?logo=open-source-initiative)
 
-> **MnémIA** – un générateur de modules chorégraphiques poétiques.  
+> **MnémIA** – un générateur de modules artistiques pour développer la créativité. Destiné à être utilisé en premier lieu par les enseignants en milieu scolaire, c'est un outil inclusif qui s'adresse à toutes et tous quel que soit l'âge, le niveau ou la physicalité des élèves. Cette première version permet de composer des phrases chorégraphique en utilisant un processus de création fondé sur les principes de contraintes et d'aléatoire, deux puissants outils à la créativité. La V2 permettra de s'ouvrir à d'autres champs artistiques.
 > Projet réalisé pour la certification **RNCP37827 – Développeur·se en Intelligence Artificielle (Bloc E1)**.  
 > Objectif : illustrer la **chaîne complète de la donnée** – collecte, nettoyage, stockage et exposition via API.
 
