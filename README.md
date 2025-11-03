@@ -124,9 +124,9 @@ Toutes les données sont consolidées dans SQLite (`mnemia.db`) puis exposées v
 |---|---|---|
 | `etl_datamuse.py` | Extraction depuis l’API Datamuse | `poetic_inspiration` |
 | `etl_csv_constraints.py` | Import CSV (positions, corps, vitesses) | `constraint` |
-| `etl_scraping_cnd.py` | Webscraping CND (simulé à partir d'un échantillon html - snippet local : web_cnd_sample.html) | `constraint` |
+| `etl_scraping_cnd.py` | Webscraping CND | `constraint` |
 | `etl_sqlite_ref.py` | Lecture mini-base SQLite | `category` / `constraint` |
-| `etl_mongodb_joconde.py` | Lecture MongoDB (connexion simulée via un fallback JSON : mongo_sample.json) | `poetic_inspiration` |
+| `etl_mongodb_joconde.py` | Lecture MongoDB | `poetic_inspiration` |
 
 Chaque script écrit un log individuel (`logs/etl_*.log`) et alimente la base principale `mnemia.db`.
 
