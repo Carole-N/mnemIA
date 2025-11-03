@@ -1,0 +1,53 @@
+[2025-11-02T19:34:28] Datamuse OK raw=40 kept=40
+[2025-11-02T19:43:47] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-02T19:43:47] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-02T19:43:47] CSV vitesses_d_execution.csv OK added=5 ignored=0 raw=5
+[2025-11-02T20:18:11] sqlite_source raw=6 kept=6
+[2025-11-02T20:43:05] webscrap raw=10 kept=10
+[2025-11-02T21:08:51] mongodb_fallback raw=0 kept=0[2025-11-02T21:59:31] webscrap raw=10 kept=10
+[2025-11-02T22:18:07] sqlite_source raw=6 kept=6
+[2025-11-02T22:25:42] mongodb_fallback raw=0 kept=0
+[2025-11-02T22:29:16] Datamuse OK raw=40 kept=40
+[2025-11-02 22:29:16] datamuse OK
+[2025-11-02T22:29:17] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-02T22:29:17] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-02T22:29:17] CSV vitesses_d_execution.csv OK added=5 ignored=0 raw=5
+[2025-11-02 22:29:17] csv_constraints OK
+[2025-11-02T22:29:20] webscrap raw=10 kept=10
+[2025-11-02 22:29:20] webscrap OK
+[2025-11-02T22:29:20] sqlite_source raw=6 kept=6
+[2025-11-02 22:29:20] sqlite_source OK
+[2025-11-02T22:29:21] mongodb ERROR: The DNS query name does not exist: _mongodb._tcp.<cluster>.
+[2025-11-02T22:29:21] mongodb_fallback raw=0 kept=0
+[2025-11-02 22:29:21] mongodb_fallback OK
+[2025-11-02T22:31:07] Datamuse OK raw=40 kept=40
+[2025-11-02 22:31:07] datamuse OK
+[2025-11-02T22:31:08] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-02T22:31:08] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-02T22:31:08] CSV vitesses_d_execution.csv OK added=5 ignored=0 raw=5
+[2025-11-02 22:31:08] csv_constraints OK
+[2025-11-02T22:31:11] webscrap raw=10 kept=10
+[2025-11-02 22:31:11] webscrap OK
+[2025-11-02T22:31:11] sqlite_source raw=6 kept=6
+[2025-11-02 22:31:11] sqlite_source OK
+[2025-11-02T22:31:12] mongodb ERROR: The DNS query name does not exist: _mongodb._tcp.<cluster>.
+[2025-11-02T22:31:12] mongodb_fallback raw=0 kept=0
+[2025-11-02 22:31:12] mongodb_fallback OK
+[2025-11-02T22:41:54] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-02T22:41:54] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-02T22:41:54] CSV vitesses_d_execution.csv OK added=5 ignored=0 raw=6
+[2025-11-02T22:42:29] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-02T22:42:29] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-02T22:42:29] CSV vitesses_d_execution.csv OK added=5 ignored=0 raw=6
+[2025-11-02T23:37:29] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-02T23:37:29] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-02T23:37:29] CSV vitesses_d_execution.csv OK added=5 ignored=0 raw=6
+[2025-11-02T23:37:57] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-02T23:37:57] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-02T23:37:57] CSV vitesses_d_execution.csv OK added=5 ignored=0 raw=6
+[2025-11-03T00:36:42] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-03T00:36:42] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-03T00:36:42] CSV vitesses_d_execution.csv OK added=5 ignored=0 raw=6
+[2025-11-03T00:57:39] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-03T00:57:39] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-03T00:57:39] CSV vitesses_d_execution.csv OK added=5 ignored=0 raw=6

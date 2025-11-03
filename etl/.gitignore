@@ -1,0 +1,21 @@
+# --- ENVIRONNEMENT ---
+.venv/
+__pycache__/
+.env
+
+# --- DONNÉES ---
+etl/data/*.csv
+etl/data/*.db
+etl/data/*.json
+
+# --- LOGS ET CAPTURES ---
+logs/
+docs/captures_E1/
+
+# --- BASE PRINCIPALE ---
+mnemia.db
+
+# --- AUTRES FICHIERS TEMPORAIRES ---
+*.pyc
+*.log
+*.sqlite
