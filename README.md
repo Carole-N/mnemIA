@@ -228,7 +228,7 @@ Les preuves de bon fonctionnement sont regroupées dans docs/captures_E1/ :
 ## Licence
 
 Ce projet est distribué sous la licence MIT.
-© 2025 – Carole Novak
+> © 2025 – Carole Novak
 
 ---
 
