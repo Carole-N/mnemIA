@@ -67,6 +67,7 @@ Toutes les données sont consolidées dans SQLite (`mnemia.db`) puis exposées v
 
 - ETL complet : extraction, transformation, chargement.  
 - EDA générique : correction automatique (`tres rapide → très rapide`).  
+- Normalisation (EDA) : homogénéisation des textes (mise en casse, normalisation Unicode, suppression d'espaces superflus, standardisation des accents et mappings de corrections).
 - Base Merise complète : 8 tables (category, constraint, movement, etc.).  
 - API FastAPI : `/inspirations/random`, `/phrases/generate`, CRUD mouvements.  
 - Conformité RGPD : aucune donnée personnelle traitée.
@@ -129,6 +130,29 @@ Toutes les données sont consolidées dans SQLite (`mnemia.db`) puis exposées v
 | `etl_mongodb_joconde.py` | Lecture MongoDB | `poetic_inspiration` |
 
 Chaque script écrit un log individuel (`logs/etl_*.log`) et alimente la base principale `mnemia.db`.
+
+### Normalisation (EDA)
+
+Avant le chargement, chaque script applique une étape de normalisation (fonction `normalize_text`) qui :
+
+- met les textes en minuscules et retire les espaces superflus ;
+- normalise les caractères Unicode et les accents ;
+- applique des mappings/corrections (ex. `tres rapide` → `très rapide`) ;
+- supprime les doublons après normalisation.
+
+Exemple simplifié (pseudo-code) :
+
+```python
+import re
+import unicodedata
+
+def normalize_text(s: str) -> str:
+       s = (s or "").strip().lower()
+       s = unicodedata.normalize('NFC', s)
+       s = re.sub(r'\s+', ' ', s)
+       s = s.replace('tres', 'très')
+       return s
+```
 
 ---
 
