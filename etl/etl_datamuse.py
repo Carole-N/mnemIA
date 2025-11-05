@@ -3,8 +3,11 @@ from __future__ import annotations
 import sqlite3, requests, re, unicodedata
 from pathlib import Path
 from datetime import datetime
+from dotenv import load_dotenv
+import os
 
-DB_PATH = Path(__file__).resolve().parents[1] / "mnemia.db"
+load_dotenv()
+DB_PATH = os.getenv("DB_PATH", "storage/mnemia.sqlite")
 LOG_PATH = Path(__file__).resolve().parent / "etl_log.txt"
 
 BASE_URL = "https://api.datamuse.com/words"

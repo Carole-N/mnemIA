@@ -3,10 +3,15 @@ from __future__ import annotations
 import sqlite3, re, unicodedata
 from pathlib import Path
 from datetime import datetime
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+DB_PATH = os.getenv("DB_PATH", "storage/mnemia.sqlite")
 
 # Chemins des bases de données et du journal
 ROOT = Path(__file__).resolve().parents[1]
-DB_MAIN = ROOT / "mnemia.db"
+DB_MAIN = DB_PATH
 DB_SRC  = ROOT / "etl" / "data" / "source_ref.db"
 LOG     = ROOT / "etl" / "etl_log.txt"
 

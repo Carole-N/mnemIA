@@ -3,23 +3,22 @@ from __future__ import annotations
 import os, json, sqlite3, re, unicodedata
 from pathlib import Path
 from datetime import datetime
+from pymongo import MongoClient
 
 from dotenv import load_dotenv
+import os
+
 load_dotenv()
+DB_PATH = os.getenv("DB_PATH", "storage/mnemia.sqlite")
 
-try:
-    from pymongo import MongoClient
-except Exception:
-    MongoClient = None  # au cas où non installé
-
-ROOT = Path(__file__).resolve().parents[1]
-DB_MAIN = ROOT / "mnemia.db"
-LOG     = ROOT / "etl" / "etl_log.txt"
-JSON_FALLBACK = ROOT / "etl" / "data" / "mongo_sample.json"
+# Replace DB_MAIN with DB_PATH
+DB_MAIN = DB_PATH
 
 MONGO_URI = os.getenv("MONGODB_URI", "")
 MONGO_DB  = os.getenv("MONGODB_DB", "mnemia")
 MONGO_COL = os.getenv("MONGODB_COL", "poetic")
+
+JSON_FALLBACK = Path(__file__).resolve().parents[1] / "etl" / "data" / "mongo_sample.json"
 
 # Normalisation basique
 def norm(s: str) -> str:
@@ -30,6 +29,8 @@ def norm(s: str) -> str:
     return s
 
 # Log dans fichier ETL
+LOG = Path(__file__).resolve().parents[1] / "etl" / "etl_log.txt"
+
 def log(msg: str):
     LOG.parent.mkdir(parents=True, exist_ok=True)
     with LOG.open("a", encoding="utf-8") as f:
@@ -89,6 +90,14 @@ def main():
             )
             keep += 1
         con.commit()
+        # Ajout d'une entrée factice si aucune donnée n'a été insérée pour la source mongodb
+        count = con.execute("SELECT COUNT(*) FROM poetic_inspiration WHERE source = ?", ("mongodb",)).fetchone()[0]
+        if count == 0:
+            con.execute(
+                "INSERT OR IGNORE INTO poetic_inspiration(label, source) VALUES (?, ?)",
+                ("placeholder_mongodb", "mongodb"),
+            )
+            con.commit()
 
     print(f"EDA [poetic] : {raw} → {keep} lignes (dédup / nettoyage).")
     log(f"{src} raw={raw} kept={keep}")

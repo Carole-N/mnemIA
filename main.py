@@ -16,6 +16,7 @@ app = FastAPI(title="MnémIA API", version="1.0.0")
 
 from fastapi.openapi.utils import get_openapi
 
+#    
 def custom_openapi():
     """Génère un schéma OpenAPI sans valeurs par défaut."""
     if app.openapi_schema:
@@ -155,7 +156,7 @@ def get_movement_constraints(label: str):
     FROM movement m
     JOIN movement_choices mc ON mc.movement_id = m.id_movement
     JOIN category c          ON c.id_category = mc.category_id
-    JOIN "constraint" ct     ON ct.id_constraint = mc.constraint_id
+    JOIN "constraints" ct     ON ct.id_constraints = mc.constraints_id
     WHERE m.label = ?
     ORDER BY c.id_category;
     """

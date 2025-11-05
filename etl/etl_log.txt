@@ -51,3 +51,405 @@
 [2025-11-03T00:57:39] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
 [2025-11-03T00:57:39] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
 [2025-11-03T00:57:39] CSV vitesses_d_execution.csv OK added=5 ignored=0 raw=6
+[2025-11-03T23:17:43] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-03T23:17:43] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-03T23:17:43] CSV vitesses_d_execution.csv OK added=5 ignored=0 raw=6
+[2025-11-03T23:18:56] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-03T23:18:56] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-03T23:18:56] CSV vitesses_d_execution.csv OK added=5 ignored=0 raw=6
+[2025-11-03T23:34:08] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-03T23:34:08] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-03T23:34:08] CSV vitesses_d_execution.csv OK added=5 ignored=0 raw=6
+[2025-11-03T23:36:14] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-03T23:36:14] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-03T23:36:14] CSV vitesses_d_execution.csv OK added=5 ignored=0 raw=6
+[2025-11-03T23:49:34] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-03T23:49:34] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-03T23:49:34] CSV vitesses_d_execution.csv OK added=5 ignored=0 raw=6
+[2025-11-03T23:58:39] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-03T23:58:39] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-03T23:58:39] CSV vitesses_d_execution.csv OK added=5 ignored=0 raw=6
+[2025-11-04T00:04:31] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T00:04:31] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T00:04:31] CSV vitesses_d_execution.csv OK added=5 ignored=0 raw=6
+[2025-11-04T00:19:44] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T00:19:44] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T00:19:44] CSV vitesses_d_execution.csv OK added=5 ignored=0 raw=6
+[2025-11-04T00:34:32] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T00:34:32] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T00:34:32] CSV vitesses_d_execution.csv OK added=5 ignored=0 raw=6
+[2025-11-04T00:39:29] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T00:39:29] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T00:39:29] CSV vitesses_d_execution.csv OK added=5 ignored=0 raw=7
+[2025-11-04T00:40:49] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T00:40:49] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T00:40:49] CSV vitesses_d_execution.csv OK added=5 ignored=0 raw=7
+[2025-11-04T00:45:23] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T00:45:23] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T00:45:23] CSV vitesses_d_execution.csv OK added=5 ignored=0 raw=7
+[2025-11-04T00:57:05] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T00:57:05] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T00:57:05] CSV vitesses_d_execution.csv OK added=6 ignored=0 raw=7
+[2025-11-04T01:02:32] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T01:02:32] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T01:02:32] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04T01:26:15] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T01:26:15] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T01:26:15] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04T01:28:52] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T01:28:52] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T01:28:52] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04T01:31:23] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T01:31:23] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T01:31:23] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04T02:11:05] Datamuse OK raw=40 kept=40
+[2025-11-04 02:11:05] datamuse OK
+[2025-11-04T02:11:05] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T02:11:05] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T02:11:05] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04 02:11:06] csv_constraints OK
+[2025-11-04T02:11:09] webscrap raw=10 kept=10
+[2025-11-04 02:11:09] webscrap OK
+[2025-11-04T02:11:09] sqlite_source raw=6 kept=6
+[2025-11-04 02:11:09] sqlite_source OK
+[2025-11-04T02:11:09] mongodb ERROR: Invalid URI host: <cluster> is not a valid hostname for 'mongodb+srv://'. Did you mean to use 'mongodb://'?
+[2025-11-04T02:11:09] mongodb_fallback raw=0 kept=0
+[2025-11-04 02:11:09] mongodb_fallback OK
+[2025-11-04T13:43:48] Datamuse OK raw=40 kept=40
+[2025-11-04 13:43:48] datamuse OK
+[2025-11-04T13:43:49] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T13:43:49] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T13:43:49] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04 13:43:49] csv_constraints OK
+[2025-11-04T13:43:52] webscrap raw=10 kept=10
+[2025-11-04 13:43:52] webscrap OK
+[2025-11-04T13:43:52] sqlite_source raw=6 kept=6
+[2025-11-04 13:43:52] sqlite_source OK
+[2025-11-04T13:43:52] mongodb ERROR: Invalid URI host: <cluster> is not a valid hostname for 'mongodb+srv://'. Did you mean to use 'mongodb://'?
+[2025-11-04T13:43:52] mongodb_fallback raw=0 kept=0
+[2025-11-04 13:43:53] mongodb_fallback OK
+[2025-11-04T13:49:19] Datamuse OK raw=40 kept=40
+[2025-11-04 13:49:19] datamuse OK
+[2025-11-04T13:49:20] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T13:49:20] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T13:49:20] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04 13:49:20] csv_constraints OK
+[2025-11-04T13:49:23] webscrap raw=10 kept=10
+[2025-11-04 13:49:23] webscrap OK
+[2025-11-04T13:49:24] sqlite_source raw=6 kept=6
+[2025-11-04 13:49:24] sqlite_source OK
+[2025-11-04T13:49:24] mongodb ERROR: Invalid URI host: <cluster> is not a valid hostname for 'mongodb+srv://'. Did you mean to use 'mongodb://'?
+[2025-11-04T13:49:24] mongodb_fallback raw=0 kept=0
+[2025-11-04 13:49:24] mongodb_fallback OK
+[2025-11-04T14:16:16] Datamuse OK raw=40 kept=40
+[2025-11-04 14:16:16] datamuse OK
+[2025-11-04T14:16:17] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T14:16:17] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T14:16:17] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04 14:16:17] csv_constraints OK
+[2025-11-04T14:16:20] webscrap raw=10 kept=10
+[2025-11-04 14:16:20] webscrap OK
+[2025-11-04T14:16:20] sqlite_source raw=6 kept=6
+[2025-11-04 14:16:20] sqlite_source OK
+[2025-11-04T14:16:20] mongodb ERROR: Invalid URI host: <cluster> is not a valid hostname for 'mongodb+srv://'. Did you mean to use 'mongodb://'?
+[2025-11-04T14:16:20] mongodb_fallback raw=0 kept=0
+[2025-11-04 14:16:20] mongodb_fallback OK
+[2025-11-04T15:15:36] Datamuse OK raw=40 kept=40
+[2025-11-04 15:15:36] datamuse OK
+[2025-11-04T15:15:37] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T15:15:37] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T15:15:37] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04 15:15:37] csv_constraints OK
+[2025-11-04T15:15:40] webscrap raw=10 kept=10
+[2025-11-04 15:15:40] webscrap OK
+[2025-11-04T15:15:40] sqlite_source raw=6 kept=6
+[2025-11-04 15:15:40] sqlite_source OK
+[2025-11-04T15:15:41] mongodb ERROR: Invalid URI host: <cluster> is not a valid hostname for 'mongodb+srv://'. Did you mean to use 'mongodb://'?
+[2025-11-04T15:15:41] mongodb_fallback raw=0 kept=0
+[2025-11-04 15:15:41] mongodb_fallback OK
+[2025-11-04T15:56:53] Datamuse OK raw=40 kept=40
+[2025-11-04 15:56:53] datamuse OK
+[2025-11-04T15:56:57] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T15:56:57] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T15:56:57] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04 15:56:57] csv_constraints OK
+[2025-11-04T15:57:02] webscrap raw=10 kept=10
+[2025-11-04 15:57:02] webscrap OK
+[2025-11-04T15:57:02] sqlite_source raw=6 kept=6
+[2025-11-04 15:57:02] sqlite_source OK
+[2025-11-04T15:57:02] mongodb_fallback raw=0 kept=0
+[2025-11-04 15:57:02] mongodb_fallback OK
+[2025-11-04T16:11:29] Datamuse OK raw=40 kept=40
+[2025-11-04 16:11:29] datamuse OK
+[2025-11-04T16:11:30] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T16:11:30] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T16:11:30] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04 16:11:30] csv_constraints OK
+[2025-11-04T16:11:33] webscrap raw=10 kept=10
+[2025-11-04 16:11:33] webscrap OK
+[2025-11-04T16:11:33] sqlite_source raw=6 kept=6
+[2025-11-04 16:11:33] sqlite_source OK
+[2025-11-04T16:11:33] mongodb_fallback raw=0 kept=0
+[2025-11-04 16:11:33] mongodb_fallback OK
+[2025-11-04T16:13:06] Datamuse OK raw=40 kept=40
+[2025-11-04 16:13:07] datamuse OK
+[2025-11-04T16:13:07] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T16:13:07] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T16:13:07] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04 16:13:07] csv_constraints OK
+[2025-11-04T16:13:10] webscrap raw=10 kept=10
+[2025-11-04 16:13:11] webscrap OK
+[2025-11-04T16:13:11] sqlite_source raw=6 kept=6
+[2025-11-04 16:13:11] sqlite_source OK
+[2025-11-04T16:13:11] mongodb_fallback raw=0 kept=0
+[2025-11-04 16:13:11] mongodb_fallback OK
+[2025-11-04T16:13:43] Datamuse OK raw=40 kept=40
+[2025-11-04 16:13:43] datamuse OK
+[2025-11-04T16:13:43] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T16:13:43] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T16:13:43] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04 16:13:43] csv_constraints OK
+[2025-11-04T16:13:46] webscrap raw=10 kept=10
+[2025-11-04 16:13:46] webscrap OK
+[2025-11-04T16:13:46] sqlite_source raw=6 kept=6
+[2025-11-04 16:13:46] sqlite_source OK
+[2025-11-04T16:13:46] mongodb_fallback raw=0 kept=0
+[2025-11-04 16:13:46] mongodb_fallback OK
+[2025-11-04T16:28:39] Datamuse ERROR theme=mist : HTTPSConnectionPool(host='api.datamuse.com', port=443): Max retries exceeded with url: /words?ml=mist&max=10 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7df6b0a73080>: Failed to resolve 'api.datamuse.com' ([Errno -3] Temporary failure in name resolution)"))
+[2025-11-04T16:28:41] Datamuse OK raw=30 kept=30
+[2025-11-04 16:28:42] datamuse OK
+[2025-11-04T16:28:42] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T16:28:42] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T16:28:42] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04 16:28:42] csv_constraints OK
+[2025-11-04T16:28:47] webscrap raw=10 kept=10
+[2025-11-04 16:28:47] webscrap OK
+[2025-11-04T16:28:48] sqlite_source raw=6 kept=6
+[2025-11-04 16:28:48] sqlite_source OK
+[2025-11-04T16:28:48] mongodb_fallback raw=0 kept=0
+[2025-11-04 16:28:48] mongodb_fallback OK
+[2025-11-04T16:37:27] Datamuse OK raw=40 kept=40
+[2025-11-04 16:37:27] datamuse OK
+[2025-11-04T16:37:27] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T16:37:27] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T16:37:27] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04 16:37:27] csv_constraints OK
+[2025-11-04T16:37:31] webscrap raw=10 kept=10
+[2025-11-04 16:37:31] webscrap OK
+[2025-11-04T16:37:31] sqlite_source raw=6 kept=6
+[2025-11-04 16:37:31] sqlite_source OK
+[2025-11-04T16:37:31] mongodb_fallback raw=0 kept=0
+[2025-11-04 16:37:31] mongodb_fallback OK
+[2025-11-04T16:51:37] Datamuse OK raw=40 kept=40
+[2025-11-04 16:51:37] datamuse OK
+[2025-11-04T16:53:08] Datamuse OK raw=40 kept=40
+[2025-11-04 16:53:08] datamuse OK
+[2025-11-04T16:54:20] Datamuse OK raw=40 kept=40
+[2025-11-04 16:54:20] datamuse OK
+[2025-11-04T16:54:21] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T16:54:21] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T16:54:21] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04T16:54:21] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T16:54:21] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T16:54:21] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04 16:54:21] csv_constraints OK
+[2025-11-04T16:54:24] webscrap raw=10 kept=10
+[2025-11-04 16:54:24] webscrap OK
+[2025-11-04T16:54:24] sqlite_source raw=6 kept=6
+[2025-11-04 16:54:24] sqlite_source OK
+[2025-11-04T16:55:03] Datamuse OK raw=40 kept=40
+[2025-11-04 16:55:03] datamuse OK
+[2025-11-04T16:55:06] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T16:55:06] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T16:55:06] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04T16:55:06] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T16:55:06] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T16:55:06] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04 16:55:07] csv_constraints OK
+[2025-11-04T16:55:10] webscrap raw=10 kept=10
+[2025-11-04 16:55:10] webscrap OK
+[2025-11-04T16:55:10] sqlite_source raw=6 kept=6
+[2025-11-04 16:55:10] sqlite_source OK
+[2025-11-04T16:55:49] Datamuse OK raw=40 kept=40
+[2025-11-04 16:55:49] datamuse OK
+[2025-11-04T16:55:50] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T16:55:50] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T16:55:50] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04T16:55:50] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T16:55:50] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T16:55:50] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04 16:55:50] csv_constraints OK
+[2025-11-04T16:55:53] webscrap raw=10 kept=10
+[2025-11-04 16:55:53] webscrap OK
+[2025-11-04T16:55:53] sqlite_source raw=6 kept=6
+[2025-11-04 16:55:53] sqlite_source OK
+[2025-11-04T16:56:53] Datamuse OK raw=40 kept=40
+[2025-11-04 16:56:53] datamuse OK
+[2025-11-04T16:56:54] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T16:56:54] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T16:56:54] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04T16:56:54] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T16:56:54] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T16:56:54] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04 16:56:54] csv_constraints OK
+[2025-11-04T16:56:57] webscrap raw=10 kept=10
+[2025-11-04 16:56:57] webscrap OK
+[2025-11-04T16:56:57] sqlite_source raw=6 kept=6
+[2025-11-04 16:56:57] sqlite_source OK
+[2025-11-04T16:56:57] mongodb_fallback raw=0 kept=0
+[2025-11-04 16:56:57] mongodb_fallback OK
+[2025-11-04T17:04:06] Datamuse OK raw=40 kept=40
+[2025-11-04 17:04:06] datamuse OK
+[2025-11-04T17:04:07] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T17:04:07] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T17:04:07] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04T17:04:07] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T17:04:07] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T17:04:07] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04 17:04:07] csv_constraints OK
+[2025-11-04T17:04:11] webscrap raw=10 kept=10
+[2025-11-04 17:04:11] webscrap OK
+[2025-11-04T17:04:11] sqlite_source raw=6 kept=6
+[2025-11-04 17:04:11] sqlite_source OK
+[2025-11-04T17:04:11] mongodb_fallback raw=0 kept=0
+[2025-11-04 17:04:11] mongodb_fallback OK
+[2025-11-04T17:09:41] Datamuse OK raw=40 kept=40
+[2025-11-04 17:09:41] datamuse OK
+[2025-11-04T17:09:42] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T17:09:42] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T17:09:42] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04T17:09:43] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T17:09:43] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T17:09:43] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04 17:09:43] csv_constraints OK
+[2025-11-04T17:09:46] webscrap raw=10 kept=10
+[2025-11-04 17:09:46] webscrap OK
+[2025-11-04T17:09:46] sqlite_source raw=6 kept=6
+[2025-11-04 17:09:46] sqlite_source OK
+[2025-11-04T17:09:47] mongodb ERROR: Invalid URI host: <cluster> is not a valid hostname for 'mongodb+srv://'. Did you mean to use 'mongodb://'?
+[2025-11-04T17:09:47] mongodb_fallback raw=0 kept=0
+[2025-11-04 17:09:47] mongodb_fallback OK
+[2025-11-04T17:11:50] Datamuse OK raw=40 kept=40
+[2025-11-04 17:11:50] datamuse OK
+[2025-11-04T17:11:51] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T17:11:51] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T17:11:51] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04T17:11:51] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T17:11:51] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T17:11:51] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04 17:11:51] csv_constraints OK
+[2025-11-04T17:11:54] webscrap raw=10 kept=10
+[2025-11-04 17:11:54] webscrap OK
+[2025-11-04T17:11:54] sqlite_source raw=6 kept=6
+[2025-11-04 17:11:54] sqlite_source OK
+[2025-11-04T17:11:55] mongodb ERROR: Invalid URI host: <cluster> is not a valid hostname for 'mongodb+srv://'. Did you mean to use 'mongodb://'?
+[2025-11-04T17:11:55] mongodb_fallback raw=0 kept=0
+[2025-11-04 17:11:55] mongodb_fallback OK
+[2025-11-04T17:13:10] Datamuse OK raw=40 kept=40
+[2025-11-04 17:13:10] datamuse OK
+[2025-11-04T17:13:11] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T17:13:11] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T17:13:11] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04T17:13:11] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-04T17:13:11] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-04T17:13:11] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-04 17:13:11] csv_constraints OK
+[2025-11-04T17:13:14] webscrap raw=10 kept=10
+[2025-11-04 17:13:14] webscrap OK
+[2025-11-04T17:13:14] sqlite_source raw=6 kept=6
+[2025-11-04 17:13:14] sqlite_source OK
+[2025-11-04T17:13:14] mongodb ERROR: Invalid URI host: <cluster> is not a valid hostname for 'mongodb+srv://'. Did you mean to use 'mongodb://'?
+[2025-11-04T17:13:14] mongodb_fallback raw=0 kept=0
+[2025-11-04 17:13:14] mongodb_fallback OK
+[2025-11-05T14:48:58] Datamuse OK raw=40 kept=40
+[2025-11-05 14:48:58] datamuse OK
+[2025-11-05T14:48:59] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-05T14:48:59] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-05T14:48:59] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-05T14:48:59] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-05T14:48:59] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-05T14:48:59] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-05 14:48:59] csv_constraints OK
+[2025-11-05T14:49:42] Datamuse OK raw=40 kept=40
+[2025-11-05 14:49:42] datamuse OK
+[2025-11-05T14:49:43] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-05T14:49:43] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-05T14:49:43] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-05T14:49:43] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-05T14:49:43] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-05T14:49:43] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-05 14:49:43] csv_constraints OK
+[2025-11-05T14:52:25] Datamuse OK raw=40 kept=40
+[2025-11-05 14:52:25] datamuse OK
+[2025-11-05T14:52:26] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-05T14:52:26] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-05T14:52:26] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-05T14:52:26] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-05T14:52:26] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-05T14:52:26] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-05 14:52:26] csv_constraints OK
+[2025-11-05T14:54:47] Datamuse OK raw=40 kept=40
+[2025-11-05 14:54:47] datamuse OK
+[2025-11-05T14:54:48] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-05T14:54:48] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-05T14:54:48] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-05T14:54:48] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-05T14:54:48] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-05T14:54:48] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-05 14:54:48] csv_constraints OK
+[2025-11-05T14:55:28] Datamuse OK raw=40 kept=40
+[2025-11-05 14:55:28] datamuse OK
+[2025-11-05T14:55:29] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-05T14:55:29] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-05T14:55:29] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-05T14:55:29] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-05T14:55:29] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-05T14:55:29] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-05 14:55:29] csv_constraints OK
+[2025-11-05T14:55:32] webscrap raw=10 kept=10
+[2025-11-05 14:55:32] webscrap OK
+[2025-11-05T14:55:32] sqlite_source raw=6 kept=6
+[2025-11-05 14:55:32] sqlite_source OK
+[2025-11-05T14:56:40] Datamuse OK raw=40 kept=40
+[2025-11-05 14:56:40] datamuse OK
+[2025-11-05T14:56:41] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-05T14:56:41] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-05T14:56:41] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-05T14:56:41] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-05T14:56:41] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-05T14:56:41] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-05 14:56:41] csv_constraints OK
+[2025-11-05T14:56:44] webscrap raw=10 kept=10
+[2025-11-05 14:56:44] webscrap OK
+[2025-11-05T14:56:44] sqlite_source raw=6 kept=6
+[2025-11-05 14:56:44] sqlite_source OK
+[2025-11-05T14:57:26] Datamuse OK raw=40 kept=40
+[2025-11-05 14:57:27] datamuse OK
+[2025-11-05T14:57:27] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-05T14:57:27] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-05T14:57:27] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-05T14:57:27] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-05T14:57:27] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-05T14:57:27] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-05 14:57:27] csv_constraints OK
+[2025-11-05T14:57:30] webscrap raw=10 kept=10
+[2025-11-05 14:57:30] webscrap OK
+[2025-11-05T14:57:30] sqlite_source raw=6 kept=6
+[2025-11-05 14:57:30] sqlite_source OK
+[2025-11-05T14:57:30] mongodb ERROR: Invalid URI host: <cluster> is not a valid hostname for 'mongodb+srv://'. Did you mean to use 'mongodb://'?
+[2025-11-05T14:58:24] Datamuse OK raw=40 kept=40
+[2025-11-05 14:58:24] datamuse OK
+[2025-11-05T14:58:24] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-05T14:58:24] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-05T14:58:24] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-05T14:58:24] CSV positions_dans_l_espace.csv OK added=5 ignored=0 raw=5
+[2025-11-05T14:58:24] CSV parties_du_corps.csv OK added=14 ignored=0 raw=14
+[2025-11-05T14:58:24] CSV vitesses_d_execution.csv OK added=4 ignored=0 raw=6
+[2025-11-05 14:58:24] csv_constraints OK
+[2025-11-05T14:58:28] webscrap raw=10 kept=10
+[2025-11-05 14:58:28] webscrap OK
+[2025-11-05T14:58:28] sqlite_source raw=6 kept=6
+[2025-11-05 14:58:28] sqlite_source OK
+[2025-11-05T14:58:28] mongodb ERROR: Invalid URI host: <cluster> is not a valid hostname for 'mongodb+srv://'. Did you mean to use 'mongodb://'?
+[2025-11-05T14:58:28] mongodb_fallback raw=0 kept=0
+[2025-11-05 14:58:28] mongodb_fallback OK

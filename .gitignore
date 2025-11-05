@@ -1,0 +1,76 @@
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+*.log
+
+# --- Environnements ---
+.venv/
+env/
+venv/
+ENV/
+.ipynb_checkpoints/
+
+# --- Fichiers temporaires ---
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+*.swp
+*.swo
+*.~lock*
+*.zip
+*.tar.gz
+*.old
+
+# --- Fichiers de configuration sensibles ---
+.env
+*.key
+*.pem
+
+# --- Sorties et données ---
+etl/__pycache__/
+etl/etl_log.txt
+etl/data/*.bak
+etl/data/*.tmp
+etl/data/*.old
+etl/data/__pycache__/
+
+# --- IDE ---
+.vscode/
+.idea/
+*.code-workspace
+
+# --- Export / rapport / captures ---
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.pdf
+*.odt
+*.docx
+*.pptx
+
+# --- Autres (notebooks, caches) ---
+*.ipynb
+*.ipynb_checkpoints
+__pycache__/
+.venv
+.env
+
+# --- Suggestions supplémentaires ---
+# Exclure les migrations Django (si applicable)
+*/migrations/*.py
+!*/migrations/__init__.py
+
+# Exclure les caches pip
+pip-wheel-metadata/
+
+# Exclure les caches pytest
+.pytest_cache/
+
+# Exclure les fichiers système supplémentaires
+desktop.ini

@@ -8,8 +8,8 @@ CREATE TABLE category (
 );
 
 /* 2) Contraintes (valeurs textuelles) rattachées à une catégorie */
-CREATE TABLE "constraint" (
-  id_constraint INTEGER PRIMARY KEY,
+CREATE TABLE "constraints" (
+  id_constraints INTEGER PRIMARY KEY,
   category_id   INTEGER NOT NULL,
   label         TEXT    NOT NULL,
   FOREIGN KEY (category_id) REFERENCES category(id_category)
@@ -26,11 +26,11 @@ CREATE TABLE movement_choices (
   id_choice     INTEGER PRIMARY KEY,
   movement_id   INTEGER NOT NULL,
   category_id   INTEGER NOT NULL,
-  constraint_id INTEGER NOT NULL,
+  constraints_id INTEGER NOT NULL,
   UNIQUE (movement_id, category_id),
   FOREIGN KEY (movement_id)  REFERENCES movement(id_movement),
   FOREIGN KEY (category_id)  REFERENCES category(id_category),
-  FOREIGN KEY (constraint_id) REFERENCES "constraint"(id_constraint)
+  FOREIGN KEY (constraints_id) REFERENCES "constraints"(id_constraints)
 );
 
 /* 5) Inspirations poétiques (Datamuse / Web scraping CND / Base Joconde via MongoDB) */
@@ -72,7 +72,7 @@ CREATE TABLE choreographic_step (
 /* 9) Index utiles (performances et lisibilité des plans d’exécution) */
 CREATE INDEX idx_mch_movement   ON movement_choices(movement_id);
 CREATE INDEX idx_mch_category   ON movement_choices(category_id);
-CREATE INDEX idx_mch_constraint ON movement_choices(constraint_id);
+CREATE INDEX idx_mch_constraints ON movement_choices(constraints_id);
 
 CREATE INDEX idx_step_phrase    ON choreographic_step(choreographic_phrase_id);
 CREATE INDEX idx_step_movement  ON choreographic_step(movement_id);

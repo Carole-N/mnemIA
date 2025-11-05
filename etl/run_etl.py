@@ -1,9 +1,15 @@
 #!/usr/bin/env python3
 import os, subprocess, sqlite3
 from datetime import datetime
+from dotenv import load_dotenv
+
+load_dotenv()
+DB_PATH = os.getenv("DB_PATH", "storage/mnemia.sqlite")
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-DB   = os.path.join(os.path.dirname(HERE), "mnemia.db")
+
+# Replace DB with DB_PATH
+DB = DB_PATH
 LOGF = os.path.join(HERE, "etl_log.txt")
 
 # Exécute une commande shell, quitte si échec
@@ -36,7 +42,7 @@ def main():
     run(f"python3 {os.path.join(HERE, 'etl_datamuse.py')}") # appel ETL datamuse
     log("datamuse OK")
 
-    # 2) CSV → constraint/category (+ EDA léger intégré)
+    # 2) CSV → constraints/category (+ EDA léger intégré)
     run(f"python3 {os.path.join(HERE, 'etl_csv_constraints.py')}") # appel ETL csv_constraints
     log("csv_constraints OK")
 
@@ -53,9 +59,19 @@ def main():
     log("mongodb_fallback OK")
 
     # Récap rapide à afficher/capturer
-    print("\n--- Récap par source (poetic_inspiration) ---") 
-    for src, n in count_by_source():
-        print(f"{src:16s} {n}")
+    print("\n--- Récap par source (poetic_inspiration) ---")
+    # Liste des sources attendues
+    expected_sources = [
+        ("datamuse", "API Datamuse"),
+        ("csv_constraints", "CSV"),
+        ("sqlite_source", "SQLite"),
+        ("webscrap", "Web scraping"),
+        ("mongodb", "MongoDB"),
+    ]
+    # Récupère les comptes existants
+    counts = dict(count_by_source())
+    for key, label in expected_sources:
+        print(f"{label:16s} {counts.get(key, 0)}")
 
     print("\n ETL terminé.")
 

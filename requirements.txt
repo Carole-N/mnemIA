@@ -1,3 +1,8 @@
-fastapi
-uvicorn[standard]
-beautifulsoup4
+# Dépendances principales du projet MnémIA
+fastapi==0.115.0
+uvicorn==0.30.1
+pandas==2.2.2
+requests==2.32.3
+beautifulsoup4==4.12.3
+pymongo==4.8.0
+python-dotenv==1.0.1

@@ -3,17 +3,22 @@ from __future__ import annotations
 import sqlite3, re, unicodedata
 from pathlib import Path
 from datetime import datetime
-
+from dotenv import load_dotenv
+import os
 import requests
 from bs4 import BeautifulSoup
 
-# Chemins des bases de données et du journal
-ROOT = Path(__file__).resolve().parents[1]
-DB_MAIN = ROOT / "mnemia.db"
-LOG     = ROOT / "etl" / "etl_log.txt"
-FALLBACK_HTML = ROOT / "etl" / "data" / "web_cnd_sample.html"
+load_dotenv()
+DB_PATH = os.getenv("DB_PATH", "storage/mnemia.sqlite")
+
+# Replace DB_MAIN with DB_PATH
+DB_MAIN = DB_PATH
 
 URL = "https://www.cnd.fr"  # Exemple fictif; remplacer par l'URL réelle // page à scraper // point d'entrée général; juste pour démontrer l'extraction
+
+ROOT = Path(__file__).resolve().parents[1]
+
+LOG = ROOT / "etl" / "etl_log.txt"
 
 # Normalisation simple d'une chaîne de caractères
 def norm(s: str) -> str:

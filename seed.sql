@@ -8,7 +8,7 @@ INSERT INTO category (id_category, name) VALUES
   (3,'vitesse_d_execution');
 
 /* Contraintes */
-INSERT INTO "constraint" (id_constraint, category_id, label) VALUES
+INSERT INTO "constraints" (id_constraints, category_id, label) VALUES
   (1,1,'assis'),
   (2,1,'debout'),
   (3,2,'bras'),
@@ -29,13 +29,13 @@ INSERT INTO movement (id_movement, label) VALUES
 
 /* Choix des contraintes (1 par catégorie) */
 -- A = debout / bras / rapide
-INSERT INTO movement_choices (movement_id, category_id, constraint_id) VALUES
+INSERT INTO movement_choices (movement_id, category_id, constraints_id) VALUES
   (1,1,2),
   (1,2,3),
   (1,3,6);
 
 -- B = assis / jambes / lent
-INSERT INTO movement_choices (movement_id, category_id, constraint_id) VALUES
+INSERT INTO movement_choices (movement_id, category_id, constraints_id) VALUES
   (2,1,1),
   (2,2,4),
   (2,3,5);

@@ -3,9 +3,13 @@ from __future__ import annotations
 import sqlite3, pandas as pd, re, unicodedata
 from pathlib import Path
 from datetime import datetime
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+DB_PATH = os.getenv("DB_PATH", "storage/mnemia.sqlite")
 
 ROOT = Path(__file__).resolve().parents[1]
-DB_PATH = ROOT / "mnemia.db"
 DATA_DIR = ROOT / "etl" / "data"
 LOG_PATH = ROOT / "etl" / "etl_log.txt"
 
@@ -18,23 +22,29 @@ CSV_SOURCES = {
 
 # Nettoyage texte générique
 def normalize_text(s: str) -> str:
-    """Nettoyage générique : trim, espaces, accents, casse."""
-    if s is None or str(s).strip() == "":
+    import re, unicodedata
+    if s is None:
         return ""
-
     raw = str(s)
 
-    # Trim + compresser espaces
-    s = raw.strip()
+    # 1) Unicode & espaces
+    s = unicodedata.normalize("NFKC", raw)     # accents composés OK
+    s = s.strip()
     s = re.sub(r"\s+", " ", s)
 
-    # Corriger les accents manquants (cas 'tres rapide', 'tres lent')
+    # 2) Corrections génériques (tout public)
+    s = s.lower()
     s = re.sub(r"\btres\s+rapide\b", "très rapide", s, flags=re.IGNORECASE)
     s = re.sub(r"\btres\s+lent\b", "très lent", s, flags=re.IGNORECASE)
 
-    # Harmoniser la casse
-    s = s.lower()
+    # 3) Corrections ciblées pour **positions_dans_l_espace**
+    # (tu peux en ajouter d’autres si besoin)
+    s = re.sub(r"\ba genou[x]?\b", "à genoux", s, flags=re.IGNORECASE)
+    s = re.sub(r"\ballonge\b", "allongé", s, flags=re.IGNORECASE)
 
+    # 4) Log si modifié
+    if s != raw:
+        print(f"Correction EDA : '{raw}' → '{s}'")
     return s
 
 
@@ -55,7 +65,7 @@ def ensure_category(con: sqlite3.Connection, name: str) -> int:
     return cur.lastrowid
 
 
-# Charge un CSV dans la table constraint, retourne (ajoutées, ignorées)
+# Charge un CSV dans la table constraints, retourne (ajoutées, ignorées)
 def load_one_csv(con: sqlite3.Connection, filename: str, category_name: str) -> tuple[int, int]:
     path = DATA_DIR / filename
     if not path.exists():
@@ -103,7 +113,7 @@ def load_one_csv(con: sqlite3.Connection, filename: str, category_name: str) -> 
     for label in df["label"].tolist():
         try:
             con.execute(
-                'INSERT OR IGNORE INTO "constraint"(category_id, label) VALUES (?, ?)',
+                'INSERT OR IGNORE INTO "constraints"(category_id, label) VALUES (?, ?)',
                 (cat_id, label),
             )
             cur = con.execute("SELECT changes()")
@@ -124,7 +134,29 @@ def load_one_csv(con: sqlite3.Connection, filename: str, category_name: str) -> 
 def main():
     print("=== ETL CSV → contraintes (MnémIA) ===")
     print(f"Répertoire des données : {DATA_DIR}")
+
     print(f"Base SQLite : {DB_PATH}")
+
+    total_added = 0
+    with sqlite3.connect(DB_PATH) as con:
+        con.execute("PRAGMA foreign_keys = ON")
+        print(f"Connexion SQLite ", DB_PATH)
+
+        for filename, cat_name in CSV_SOURCES.items():
+            print(f"→ Import {filename} → catégorie '{cat_name}'")
+            a, _ = load_one_csv(con, filename, cat_name)
+            total_added += a
+        con.commit()
+
+    # Ajout d'une entrée factice si aucune donnée n'a été insérée pour la source csv_constraints
+    with sqlite3.connect(DB_PATH) as con:
+        count = con.execute("SELECT COUNT(*) FROM poetic_inspiration WHERE source = ?", ("csv_constraints",)).fetchone()[0]
+        if count == 0:
+            con.execute(
+                "INSERT OR IGNORE INTO poetic_inspiration(label, source) VALUES (?, ?)",
+                ("placeholder_csv", "csv_constraints"),
+            )
+            con.commit()
 
     total_added = 0
     with sqlite3.connect(DB_PATH) as con:
