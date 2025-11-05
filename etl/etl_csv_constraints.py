@@ -132,10 +132,15 @@ def load_one_csv(con: sqlite3.Connection, filename: str, category_name: str) -> 
 
 # Main ETL
 def main():
+
     print("=== ETL CSV → contraintes (MnémIA) ===")
     print(f"Répertoire des données : {DATA_DIR}")
-
     print(f"Base SQLite : {DB_PATH}")
+
+    # Suppression automatique des anciennes contraintes pour éviter les doublons
+    with sqlite3.connect(DB_PATH) as con:
+        con.execute('DELETE FROM "constraints";')
+        con.commit()
 
     total_added = 0
     with sqlite3.connect(DB_PATH) as con:

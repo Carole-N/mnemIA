@@ -27,18 +27,6 @@ INSERT INTO movement (id_movement, label) VALUES
   (1,'A'),
   (2,'B');
 
-/* Choix des contraintes (1 par catégorie) */
--- A = debout / bras / rapide
-INSERT INTO movement_choices (movement_id, category_id, constraints_id) VALUES
-  (1,1,2),
-  (1,2,3),
-  (1,3,6);
-
--- B = assis / jambes / lent
-INSERT INTO movement_choices (movement_id, category_id, constraints_id) VALUES
-  (2,1,1),
-  (2,2,4),
-  (2,3,5);
 
 /* Inspirations poétiques */
 INSERT INTO poetic_inspiration (id_poetic_inspiration, label, source, created_at) VALUES
