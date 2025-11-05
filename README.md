@@ -49,7 +49,7 @@ Le pipeline ETL/EDA collecte, nettoie et uniformise cinq sources de données :
 | `etl_sqlite_ref.py` | Base SQLite | Lexique artistique |
 | `etl_mongodb_joconde.py` | MongoDB | Données “open data” culturelles |
 
-Toutes les données sont consolidées dans SQLite (`mnemia.db`) puis exposées via une API FastAPI.
+Toutes les données sont consolidées dans SQLite (`mnemia.sqlite`) puis exposées via une API FastAPI.
 
 ---
 
@@ -114,7 +114,7 @@ Toutes les données sont consolidées dans SQLite (`mnemia.db`) puis exposées v
                 EDA (normalize_text)
                        |
                        v
-           SQLite — mnemia.db  →  FastAPI (API)
+           SQLite — mnemia.sqlite  →  FastAPI (API)
 
 ---
 
@@ -128,7 +128,7 @@ Toutes les données sont consolidées dans SQLite (`mnemia.db`) puis exposées v
 | `etl_sqlite_ref.py` | Lecture mini-base SQLite | `category` / `constraint` |
 | `etl_mongodb_joconde.py` | Lecture MongoDB (connexion simulée via un fallback JSON : mongo_sample.json) | `poetic_inspiration` |
 
-Chaque script écrit un log individuel (`logs/etl_*.log`) et alimente la base principale `mnemia.db`.
+Chaque script écrit un log individuel (`logs/etl_*.log`) et alimente la base principale `mnemia.sqlite`.
 
 ---
 
@@ -238,7 +238,7 @@ mnemIA/
        ```
 
 - Les logs ETL sont générés dans `etl/logs/`.
-- La base SQLite (`mnemia.db`) est créée automatiquement lors de l’exécution des scripts ETL.
+- La base SQLite (`mnemia.sqlite`) est créée automatiquement lors de l’exécution des scripts ETL.
 
 ---
 
