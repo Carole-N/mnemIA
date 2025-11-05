@@ -163,7 +163,7 @@ Chaque exécution génère un fichier de log dans etl/logs/, traçant le nombre 
 
 ---
 
-## Étape 2 : Démarrer l’API FastAPI
+### Étape 2 : Démarrer l’API FastAPI
 
 ```bash
 uvicorn main:app --reload --port 8000
