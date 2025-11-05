@@ -24,7 +24,22 @@
 1. [Description](#description)
 2. [Objectifs du projet](#objectifs-du-projet)
 3. [Fonctionnalités principales](#fonctionnalités-principales)
+4. [Technologies utilisées](#technologies-utilisées)
+5. [Architecture du pipeline ETL](#architecture-du-pipeline-etl)
+6. [Scripts ETL](#scripts-etl)
+7. [Installation](#installation)
+8. [Lancement du projet](#lancement-du-projet)
+9. [Structure du dépôt](#structure-du-dépôt)
+10. [Captures et preuves](#captures-et-preuves)
+11. [Licence](#licence)
+12. [Autrice](#autrice)
+
 ---
+
+## Description
+
+MnémIA automatise la création de modules créatifs pour l’enseignement artistique.  
+Le pipeline ETL/EDA collecte, nettoie et uniformise cinq sources de données :  
 
 | Source | Type | Rôle |
 |---|---|---|
@@ -50,17 +65,19 @@ Toutes les données sont consolidées dans SQLite (`mnemia.db`) puis exposées v
 
 ## Fonctionnalités principales
 
+- ETL complet : extraction, transformation, chargement.  
 - EDA générique : correction automatique (`tres rapide → très rapide`).  
-- Normalisation (EDA) : homogénéisation des textes (mise en casse, normalisation Unicode, suppression d'espaces superflus, standardisation des accents et mappings de corrections).
 - Base Merise complète : 8 tables (category, constraint, movement, etc.).  
 - API FastAPI : `/inspirations/random`, `/phrases/generate`, CRUD mouvements.  
 - Conformité RGPD : aucune donnée personnelle traitée.
+
 ---
 
 ## Technologies utilisées
 
 | Outil | Usage |
 |---|---|
+| Python 3.x | Langage principal |
 | Pandas | Nettoyage (EDA) |
 | SQLite | Base relationnelle |
 | MongoDB | Source Big Data |
@@ -107,34 +124,11 @@ Toutes les données sont consolidées dans SQLite (`mnemia.db`) puis exposées v
 |---|---|---|
 | `etl_datamuse.py` | Extraction depuis l’API Datamuse | `poetic_inspiration` |
 | `etl_csv_constraints.py` | Import CSV (positions, corps, vitesses) | `constraint` |
-| `etl_scraping_cnd.py` | Webscraping CND | `constraint` |
+| `etl_scraping_cnd.py` | Webscraping CND (simulé à partir d'un échantillon html - snippet local : web_cnd_sample.html) | `constraint` |
 | `etl_sqlite_ref.py` | Lecture mini-base SQLite | `category` / `constraint` |
-| `etl_mongodb_joconde.py` | Lecture MongoDB | `poetic_inspiration` |
+| `etl_mongodb_joconde.py` | Lecture MongoDB (connexion simulée via un fallback JSON : mongo_sample.json) | `poetic_inspiration` |
 
 Chaque script écrit un log individuel (`logs/etl_*.log`) et alimente la base principale `mnemia.db`.
-
-### Normalisation (EDA)
-
-Avant le chargement, chaque script applique une étape de normalisation (fonction `normalize_text`) qui :
-
-- met les textes en minuscules et retire les espaces superflus ;
-- normalise les caractères Unicode et les accents ;
-- applique des mappings/corrections (ex. `tres rapide` → `très rapide`) ;
-- supprime les doublons après normalisation.
-
-Exemple simplifié (pseudo-code) :
-
-```python
-import re
-import unicodedata
-
-def normalize_text(s: str) -> str:
-       s = (s or "").strip().lower()
-       s = unicodedata.normalize('NFC', s)
-       s = re.sub(r'\s+', ' ', s)
-       s = s.replace('tres', 'très')
-       return s
-```
 
 ---
 
@@ -185,78 +179,34 @@ http://127.0.0.1:8000/
 
 ---
 
-## Déploiement
-
-Mode d’emploi pour le déploiement en production de MnémIA
-
-
-
-- Utiliser un serveur ASGI stable : ex. `uvicorn` en production derrière `gunicorn` (gunicorn + uvicorn workers) ou seulement `uvicorn` avec gestionnaire de processus (systemd, supervisord).
-- Fournir les variables sensibles via des variables d'environnement ou un gestionnaire de secrets (ne pas committer `.env`). Utiliser le fichier `.env.example` comme modèle.
-- Mettre l'application derrière un reverse proxy (nginx) pour gérer TLS/SSL, compression et mise en cache.
-- Prévoir une journalisation structurée et une rotation des logs (logrotate) pour les fichiers dans `etl/logs/`.
-- Pour les petites installations, un déploiement simple avec `systemd` est suffisant (exemple ci‑dessous). Pour un déploiement conteneurisé, docker-compose ou Kubernetes conviennent selon l'échelle.
-
-Exemple minimal `systemd` (adapté à votre chemin d'installation) :
-
-```ini
-[Unit]
-Description=mnemIA API
-
-[Service]
-User=youruser
-WorkingDirectory=/home/youruser/iadev/mnemIA
-EnvironmentFile=/home/youruser/iadev/mnemIA/.env
-ExecStart=/home/youruser/iadev/mnemIA/.venv/bin/uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}
-Restart=always
-
-[Install]
-WantedBy=multi-user.target
-```
-
-Exemple Docker Compose (très basique) :
-
-```yaml
-version: '3.8'
-services:
-       app:
-              build: .
-              command: uvicorn main:app --host 0.0.0.0 --port 8000
-              ports:
-                     - "8000:8000"
-              env_file:
-                     - .env
-              volumes:
-                     - ./etl/logs:/app/etl/logs
-```
-
-Si tu veux, je peux ajouter un `Dockerfile` minimal et un `docker-compose.yml` en draft dans le repo pour que tu puisses tester le déploiement conteneurisé.
-
----
-
 ## Structure du dépôt
 
-Note : voici une vue simplifiée des fichiers versionnés uniquement. Les artefacts générés localement (environnements virtuels, bases de données, fichiers `.env`, logs temporaires) ne sont pas commités — consultez `.gitignore`.
-
 ```text
-├── etl/
-│   ├── data/
+├── etl
+│   ├── data
+│   │   ├── mongo_sample.json
+│   │   ├── parties_du_corps.csv
+│   │   ├── positions_dans_l_espace.csv
+│   │   ├── source_ref.db
+│   │   ├── vitesses_d_execution.csv
+│   │   └── web_cnd_sample.html
 │   ├── etl_csv_constraints.py
 │   ├── etl_datamuse.py
+│   ├── etl_log.txt
 │   ├── etl_mongodb_joconde.py
 │   ├── etl_scraping_cnd.py
 │   ├── etl_sqlite_ref.py
 │   └── run_etl.py
-├── main.py
+├── main.py                   
 ├── mcd_mnemia.py
+├── mnemia.db                 
+├── mnemiadb
 ├── requirements.txt
 ├── README.md
 ├── schema.sql
 ├── seed.sql
-├── .env.example
-├── LICENSE
-└── storage/
-       └── db_init.py
+├── .env
+└── .venv/                    
 ```
 
 ---
