@@ -182,31 +182,37 @@ http://127.0.0.1:8000/
 ## Structure du dépôt
 
 ```text
-├── etl
-│   ├── data
-│   │   ├── mongo_sample.json
-│   │   ├── parties_du_corps.csv
-│   │   ├── positions_dans_l_espace.csv
-│   │   ├── source_ref.db
-│   │   ├── vitesses_d_execution.csv
-│   │   └── web_cnd_sample.html
-│   ├── etl_csv_constraints.py
-│   ├── etl_datamuse.py
-│   ├── etl_log.txt
-│   ├── etl_mongodb_joconde.py
-│   ├── etl_scraping_cnd.py
-│   ├── etl_sqlite_ref.py
-│   └── run_etl.py
-├── main.py                   
-├── mcd_mnemia.py
-├── mnemia.db                 
-├── mnemiadb
-├── requirements.txt
-├── README.md
-├── schema.sql
-├── seed.sql
-├── .env
-└── .venv/                    
+mnemIA/
+├── LICENSE                  # Licence du projet (MIT)
+├── README.md                # Documentation principale
+├── .env.example             # Exemple de configuration d'environnement
+├── .env                     # Variables d'environnement (non suivi par git)
+├── .gitignore               # Fichiers à ignorer par git
+├── main.py                  # API FastAPI principale
+├── mcd_mnemia.py            # Modèle conceptuel de données (MCD)
+├── requirements.txt         # Dépendances Python
+├── schema.sql               # Schéma de la base SQLite
+├── seed.sql                 # Script d'initialisation/données exemples
+├── docs/                    # Documentation supplémentaire
+├── etl/                     # Scripts ETL (collecte et nettoyage des données)
+│   ├── etl_csv_constraints.py      # ETL pour les contraintes depuis CSV
+│   ├── etl_datamuse.py            # ETL pour l'API Datamuse (inspirations)
+│   ├── etl_log.txt                # Log d'exécution des ETL
+│   ├── etl_mongodb_joconde.py     # ETL pour MongoDB (Joconde)
+│   ├── etl_scraping_cnd.py        # ETL pour le web scraping (CND)
+│   ├── etl_sqlite_ref.py          # ETL pour la mini-base SQLite (lexique)
+│   ├── run_etl.py                 # Orchestrateur : lance tous les ETL
+│   └── data/                      # Données sources pour les ETL
+│       ├── mongo_sample.json          # Exemple de données MongoDB
+│       ├── parties_du_corps.csv       # CSV contraintes : parties du corps
+│       ├── positions_dans_l_espace.csv# CSV contraintes : positions
+│       ├── source_ref.db              # Mini-base SQLite (lexique)
+│       ├── vitesses_d_execution.csv   # CSV contraintes : vitesses
+│       └── web_cnd_sample.html        # Exemple HTML pour web scraping
+├── storage/
+│   └── mnemia.sqlite            # Base centrale SQLite (non suivie par git)
+├── __pycache__/                 # Cache Python (non suivi par git)
+├── .venv/                       # Environnement virtuel Python (non suivi par git)                    
 ```
 
 ---
