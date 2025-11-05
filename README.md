@@ -30,7 +30,7 @@
 7. [Installation](#installation)
 8. [Lancement du projet](#lancement-du-projet)
 9. [Structure du dépôt](#structure-du-dépôt)
-10. [Captures et preuves](#captures-et-preuves)
+10. [Déploiement](#déploiement)
 11. [Licence](#licence)
 12. [Autrice](#autrice)
 
