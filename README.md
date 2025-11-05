@@ -211,17 +211,28 @@ http://127.0.0.1:8000/
 
 ---
 
-## Captures et preuves
+## Déploiement
 
-Les preuves de bon fonctionnement sont regroupées dans docs/captures_E1/ :
+1. **Installer les dépendances**  
+       ```bash
+       python -m venv .venv
+       source .venv/bin/activate
+       pip install -r requirements.txt
+       ```
 
-| Capture | Description                                              |
-| ------- | -------------------------------------------------------- |
-| Cap 1   | Exécution du pipeline Datamuse                           |
-| Cap 2   | Import CSV des contraintes                               |
-| Cap 3   | EDA : correction automatique “tres rapide → très rapide” |
-| Cap 4   | Requête SQLite (contraintes propres)                     |
-| Cap 5   | etl_log.txt – récapitulatif par source                   |
+2. **Configurer l’environnement**  
+       Copier `.env.example` en `.env` et adapter si besoin :
+       ```bash
+       cp .env.example .env
+       ```
+
+3. **Lancer l’API**  
+       ```bash
+       uvicorn main:app --host 0.0.0.0 --port 8000
+       ```
+
+- Les logs ETL sont générés dans `etl/logs/`.
+- La base SQLite (`mnemia.db`) est créée automatiquement lors de l’exécution des scripts ETL.
 
 ---
 
