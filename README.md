@@ -181,32 +181,27 @@ http://127.0.0.1:8000/
 
 ## Structure du dépôt
 
+Note : voici une vue simplifiée des fichiers versionnés uniquement. Les artefacts générés localement (environnements virtuels, bases de données, fichiers `.env`, logs temporaires) ne sont pas commités — consultez `.gitignore`.
+
 ```text
-├── etl
-│   ├── data
-│   │   ├── mongo_sample.json
-│   │   ├── parties_du_corps.csv
-│   │   ├── positions_dans_l_espace.csv
-│   │   ├── source_ref.db
-│   │   ├── vitesses_d_execution.csv
-│   │   └── web_cnd_sample.html
+├── etl/
+│   ├── data/
 │   ├── etl_csv_constraints.py
 │   ├── etl_datamuse.py
-│   ├── etl_log.txt
 │   ├── etl_mongodb_joconde.py
 │   ├── etl_scraping_cnd.py
 │   ├── etl_sqlite_ref.py
 │   └── run_etl.py
-├── main.py                   
+├── main.py
 ├── mcd_mnemia.py
-├── mnemia.db                 
-├── mnemiadb
 ├── requirements.txt
 ├── README.md
 ├── schema.sql
 ├── seed.sql
-├── .env
-└── .venv/                    
+├── .env.example
+├── LICENSE
+└── storage/
+       └── db_init.py
 ```
 
 ---
