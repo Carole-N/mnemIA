@@ -1,9 +1,19 @@
+# --- Page d'accueil pédagogique ---
+@app.get("/", tags=["Accueil"])
+def accueil():
+    """
+    Page d'accueil de l'API MnémIA pour la démonstration.
+    """
+    return {
+        "message": "Bienvenue sur l'API MnémIA ! Rendez-vous sur /docs pour explorer et tester les fonctionnalités pédagogiques de l'API (création de mouvements, séquences, phrases, inspirations, etc.)."
+    }
+
 import os
 import sqlite3
 import random
 
 from dotenv import load_dotenv
-from fastapi import FastAPI, HTTPException, Depends
+from fastapi import FastAPI, HTTPException, Depends, Body
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from typing import List
 from pydantic import BaseModel
@@ -43,6 +53,16 @@ def custom_openapi():
     return app.openapi_schema
 
 app.openapi = custom_openapi
+
+# --- Page d'accueil pédagogique ---
+@app.get("/", tags=["Accueil"])
+def accueil():
+    """
+    Page d'accueil de l'API MnémIA pour la démonstration.
+    """
+    return {
+        "message": "Bienvenue sur l'API MnémIA ! Rendez-vous sur /docs pour explorer et tester les fonctionnalités pédagogiques de l'API (création de mouvements, séquences, phrases, inspirations, etc.)."
+    }
 
 
 # --- Authentification par Bearer Token (afficher le bouton Authorize dans /docs) ---
@@ -98,10 +118,12 @@ class MovementIn(BaseModel):
         }
     }
 
+class MovementRandomIn(BaseModel):
+    label: str
 
 
 # --- Endpoints ---
-@app.get("/health")
+@app.get("/health", tags=["Système"])
 def health():
     """Vérifie la connexion à la base"""
     try:
@@ -112,14 +134,14 @@ def health():
         return {"status": "error", "detail": str(e)}
 
 
-@app.post("/movements", dependencies=[Depends(require_auth)])
+@app.post("/movements", dependencies=[Depends(require_auth)], tags=["Mouvements"])
 def create_movement(data: MovementIn):
     """Créer un mouvement"""
     new_id = execute("INSERT INTO movement(label) VALUES (?)", (data.label,))
     return {"id": new_id, "label": data.label}
 
 
-@app.get("/movements/{id}", dependencies=[Depends(require_auth)])
+@app.get("/movements/{id}", dependencies=[Depends(require_auth)], tags=["Mouvements"])
 def read_movement(id: int):
     """Lire un mouvement"""
     row = fetch_one("SELECT id_movement, label FROM movement WHERE id_movement = ?", (id,))
@@ -128,7 +150,7 @@ def read_movement(id: int):
     return dict(row)
 
 
-@app.put("/movements/{id}", dependencies=[Depends(require_auth)])
+@app.put("/movements/{id}", dependencies=[Depends(require_auth)], tags=["Mouvements"])
 def update_movement(id: int, data: MovementIn):
     """Modifier un mouvement"""
     if not fetch_one("SELECT id_movement FROM movement WHERE id_movement = ?", (id,)):
@@ -137,7 +159,7 @@ def update_movement(id: int, data: MovementIn):
     return {"id": id, "label": data.label}
 
 
-@app.delete("/movements/{id}", dependencies=[Depends(require_auth)])
+@app.delete("/movements/{id}", dependencies=[Depends(require_auth)], tags=["Mouvements"])
 def delete_movement(id: int):
     """Supprimer un mouvement"""
     if not fetch_one("SELECT id_movement FROM movement WHERE id_movement = ?", (id,)):
@@ -146,28 +168,7 @@ def delete_movement(id: int):
     return {"deleted": id}
 
 
-@app.get("/movements/{label}/constraints", dependencies=[Depends(require_auth)])
-def get_movement_constraints(label: str):
-    """
-    Retourne les contraintes associées à un mouvement donné (via jointures SQL).
-    Permet d’illustrer une requête SQL avec jointure.
-    """
-    query = """
-    SELECT m.label AS mouvement, c.name AS categorie, ct.label AS contrainte
-    FROM movement m
-    JOIN movement_choices mc ON mc.movement_id = m.id_movement
-    JOIN category c          ON c.id_category = mc.category_id
-    JOIN "constraints" ct     ON ct.id_constraints = mc.constraints_id
-    WHERE m.label = ?
-    ORDER BY c.id_category;
-    """
-    rows = fetch_all(query, (label,))
-    if not rows:
-        raise HTTPException(status_code=404, detail="Mouvement introuvable ou sans contraintes")
-    return {"mouvement": label, "contraintes": [dict(r) for r in rows]}
-
-
-@app.get("/inspirations/random", dependencies=[Depends(require_auth)])
+@app.get("/inspirations/random", dependencies=[Depends(require_auth)], tags=["Inspirations"])
 def get_random_inspiration():
     """Renvoie une consigne poétique aléatoire depuis la table poetic_inspiration."""
     row = fetch_one("SELECT label FROM poetic_inspiration ORDER BY RANDOM() LIMIT 1;")
@@ -178,7 +179,7 @@ def get_random_inspiration():
 
 
 # Nouvelle route : génère uniquement la séquence mouvements+pauses
-@app.get("/sequences/generate", dependencies=[Depends(require_auth)])
+@app.get("/sequences/generate", dependencies=[Depends(require_auth)], tags=["Séquences"])
 def generate_sequence():
     """
     Génère une séquence chorégraphique :
@@ -204,7 +205,7 @@ def generate_sequence():
     }
 
 # Nouvelle route : assemble séquence + inspiration poétique
-@app.get("/phrases/generate", dependencies=[Depends(require_auth)])
+@app.get("/phrases/generate", dependencies=[Depends(require_auth)], tags=["Phrases"])
 def generate_phrase():
     """
     Génère une phrase chorégraphique complète :
@@ -230,3 +231,33 @@ def generate_phrase():
         "inspiration": inspiration,
         "description": desc
     }
+
+@app.post("/movements/random", dependencies=[Depends(require_auth)], tags=["Mouvements"])
+def create_random_movement(data: MovementRandomIn = Body(...)):
+    """
+    Crée un mouvement avec un label donné et lui associe 3 contraintes aléatoires (une par catégorie).
+    Retourne le mouvement et ses contraintes.
+    """
+    con = sqlite3.connect(DB_PATH)
+    con.row_factory = sqlite3.Row
+    # 1. Créer le mouvement
+    cur = con.execute("INSERT INTO movement(label) VALUES (?)", (data.label,))
+    movement_id = cur.lastrowid
+    # 2. Tirer 3 contraintes aléatoires (une par catégorie)
+    categories = fetch_all("SELECT id_category, name FROM category")
+    constraints = []
+    for cat in categories:
+        row = con.execute(
+            "SELECT id_constraints, label FROM constraints WHERE category_id = ? ORDER BY RANDOM() LIMIT 1;",
+            (cat["id_category"],)
+        ).fetchone()
+        if row:
+            # Associer la contrainte au mouvement
+            con.execute(
+                "INSERT INTO movement_choices(movement_id, category_id, constraints_id) VALUES (?, ?, ?)",
+                (movement_id, cat["id_category"], row["id_constraints"])
+            )
+            constraints.append({"categorie": cat["name"], "contrainte": row["label"]})
+    con.commit()
+    con.close()
+    return {"label": data.label, "contraintes": constraints}
