@@ -1,12 +1,5 @@
-# --- Page d'accueil pédagogique ---
-@app.get("/", tags=["Accueil"])
-def accueil():
-    """
-    Page d'accueil de l'API MnémIA pour la démonstration.
-    """
-    return {
-        "message": "Bienvenue sur l'API MnémIA ! Rendez-vous sur /docs pour explorer et tester les fonctionnalités pédagogiques de l'API (création de mouvements, séquences, phrases, inspirations, etc.)."
-    }
+
+
 
 import os
 import sqlite3
