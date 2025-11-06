@@ -63,12 +63,19 @@ Toutes les données sont consolidées dans SQLite (`mnemia.sqlite`) puis exposé
 
 ---
 
+
 ## Fonctionnalités principales
 
 - ETL complet : extraction, transformation, chargement.  
 - EDA générique : correction automatique (`tres rapide → très rapide`).  
 - Base Merise complète : 8 tables (category, constraint, movement, etc.).  
-- API FastAPI : `/inspirations/random`, `/phrases/generate`, CRUD mouvements.  
+- API FastAPI :
+       - `/movements` : création simple d'un mouvement
+       - `/movements/random` : création d'un mouvement + contraintes aléatoires
+       - `/sequences/generate` : génère une séquence de 3 mouvements + pause
+       - `/phrases/generate` : génère une phrase chorégraphique complète (5 mouvements + inspiration)
+       - `/inspirations/random` : tire une consigne poétique
+       - Authentification par token (bouton Authorize dans Swagger)
 - Conformité RGPD : aucune donnée personnelle traitée.
 
 ---
@@ -145,37 +152,55 @@ pip install -r requirements.txt
 
 ---
 
-## Lancement du projet
 
-### Étape 1 : Exécuter les scripts ETL
+## Guide de démo rapide
 
-Chaque script peut être lancé indépendamment afin de prouver la collecte et le chargement des données par source.
+1. Accéder à la page d’accueil : `/`
+2. Ouvrir la documentation Swagger : `/docs`
+3. S’authentifier avec le bouton Authorize (API_TOKEN)
+4. Créer un mouvement (POST `/movements` ou `/movements/random`)
+5. Générer une séquence (GET `/sequences/generate`)
+6. Générer une phrase chorégraphique (GET `/phrases/generate`)
+7. Tirer une inspiration poétique (GET `/inspirations/random`)
 
-```bash
-python etl/etl_datamuse.py
-python etl/etl_csv_constraints.py
-python etl/etl_scraping_cnd.py
-python etl/etl_sqlite_ref.py
-python etl/etl_mongodb_joconde.py
+Exemple d’appel et de réponse :
+
+```json
+POST /movements/random
+{
+       "label": "A"
+}
+
+Réponse :
+{
+       "label": "A",
+       "contraintes": [
+              {"categorie": "positions_dans_l_espace", "contrainte": "à genoux"},
+              {"categorie": "parties_du_corps", "contrainte": "dos"},
+              {"categorie": "vitesses_d_execution", "contrainte": "lent"}
+       ]
+}
 ```
 
-Chaque exécution génère un fichier de log dans etl/logs/, traçant le nombre de lignes importées et nettoyées.
-
----
-
-### Étape 2 : Démarrer l’API FastAPI
-
-```bash
-uvicorn main:app --reload --port 8000
+```json
+GET /sequences/generate
+Réponse :
+{
+       "sequence": ["B", "A", "A"],
+       "pause": "aucune"
+}
 ```
 
----
-
-Accès à la documentation interactive Swagger :
-http://127.0.0.1:8000/docs
-
-Accès direct à l’API :
-http://127.0.0.1:8000/
+```json
+GET /phrases/generate
+Réponse :
+{
+       "sequence": ["A", "B", "A", "B", "A"],
+       "pause": "courte",
+       "inspiration": "lamplit",
+       "description": "Phrase chorégraphique : A, B, A, B, A (inspirée par 'lamplit')."
+}
+```
 
 ---
 
