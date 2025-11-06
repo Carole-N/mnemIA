@@ -5,6 +5,7 @@ import random
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Depends
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from typing import List
 from pydantic import BaseModel
 
 # --- Chargement des variables d'environnement ---
@@ -175,42 +176,57 @@ def get_random_inspiration():
     return {"poetic_inspiration": row["label"]}
 
 
-@app.get("/phrases/generate", dependencies=[Depends(require_auth)])
-def generate_phrase():
+
+# Nouvelle route : génère uniquement la séquence mouvements+pauses
+@app.get("/sequences/generate", dependencies=[Depends(require_auth)])
+def generate_sequence():
     """
-    Génère une phrase chorégraphique simple :
+    Génère une séquence chorégraphique :
     - 3 mouvements tirés au hasard (ex. B, B, A)
     - 1 pause aléatoire (courte/longue/aucune)
-    - 1 inspiration poétique aléatoire
     """
-    # 1) 3 mouvements
     rows = fetch_all("SELECT label FROM movement ORDER BY RANDOM() LIMIT 3;")
     if len(rows) == 0:
         raise HTTPException(status_code=400, detail="Aucun mouvement disponible")
     moves = [r["label"] for r in rows]
 
-    # 2) inspiration poétique
-    insp = fetch_one("SELECT label FROM poetic_inspiration ORDER BY RANDOM() LIMIT 1;")
-    inspiration = insp["label"] if insp else None
-
-    # 3) pause
     p = fetch_one("SELECT label FROM pause ORDER BY RANDOM() LIMIT 1;")
     pause_label = p["label"] if p else "aucune"
 
-    # 4) séquence (on insère 'pause' au hasard si la pause n'est pas 'aucune')
     sequence = moves.copy()
     if pause_label and pause_label.lower() != "aucune":
-        insert_at = random.randrange(0, len(sequence) + 1)  # position aléatoire
+        insert_at = random.randrange(0, len(sequence) + 1)
         sequence.insert(insert_at, "pause")
 
-    # 5) description lisible
+    return {
+        "sequence": sequence,                # ex. ["B", "B", "pause", "A"]
+        "pause": pause_label                 # ex. "courte"
+    }
+
+# Nouvelle route : assemble séquence + inspiration poétique
+@app.get("/phrases/generate", dependencies=[Depends(require_auth)])
+def generate_phrase():
+    """
+    Génère une phrase chorégraphique complète :
+    - Séquence mouvements+pauses
+    - Inspiration poétique aléatoire
+    """
+    # Génère la séquence
+    seq = generate_sequence()
+    sequence = seq["sequence"]
+    pause_label = seq["pause"]
+
+    # Ajoute l'inspiration poétique
+    insp = fetch_one("SELECT label FROM poetic_inspiration ORDER BY RANDOM() LIMIT 1;")
+    inspiration = insp["label"] if insp else None
+
     desc = f"Phrase chorégraphique : {', '.join(sequence)}"
     if inspiration:
         desc += f" (inspirée par '{inspiration}')."
 
     return {
-        "sequence": sequence,                # ex. ["B", "B", "pause", "A"]
-        "pause": pause_label,                # ex. "courte"
-        "inspiration": inspiration,          # ex. "brume"
-        "description": desc                  # phrase lisible pour le jury
+        "sequence": sequence,
+        "pause": pause_label,
+        "inspiration": inspiration,
+        "description": desc
     }
